@@ -2,7 +2,7 @@
 // (receiver module+remote controller)
 
 const enum IrButton {
-  //% block="any"
+  //% block="どれか"
   Any = -1,
   //% block="▲"
   Up = 0x62,
@@ -47,9 +47,9 @@ const enum IrButton {
 }
 
 const enum IrButtonAction {
-  //% block="pressed"
+  //% block="おした"
   Pressed = 0,
-  //% block="released"
+  //% block="はなした"
   Released = 1,
 }
 
@@ -234,7 +234,7 @@ namespace makerbit {
    */
   //% subcategory="IR Receiver"
   //% blockId="makerbit_infrared_connect_receiver"
-  //% block="こねくと IR receiver at pin %pin and decode %protocol"
+  //% block="赤外線センサーを %protocol 通信プロトコルでピン %pin につなげる"
   //% pin.fieldEditor="gridpicker"
   //% pin.fieldOptions.columns=4
   //% pin.fieldOptions.tooltips="false"
@@ -283,7 +283,7 @@ namespace makerbit {
    */
   //% subcategory="IR Receiver"
   //% blockId=makerbit_infrared_on_ir_button
-  //% block="on IR button | %button | %action"
+  //% block="ボタン %button を %action とき"
   //% button.fieldEditor="gridpicker"
   //% button.fieldOptions.columns=3
   //% button.fieldOptions.tooltips="false"
@@ -307,7 +307,7 @@ namespace makerbit {
    */
   //% subcategory="IR Receiver"
   //% blockId=makerbit_infrared_ir_button_pressed
-  //% block="IR button"
+  //% block="最後におされたボタン"
   //% weight=70
   export function irButton(): number {
     basic.pause(0); // Yield to support background processing when called in tight loops
@@ -323,7 +323,7 @@ namespace makerbit {
    */
   //% subcategory="IR Receiver"
   //% blockId=makerbit_infrared_on_ir_datagram
-  //% block="on IR datagram received"
+  //% block="データを受信したとき"
   //% weight=40
   export function onIrDatagram(handler: () => void) {
     initIrState();
@@ -336,6 +336,7 @@ namespace makerbit {
    */
   //% subcategory="IR Receiver"
   //% blockId=makerbit_infrared_ir_datagram
+  //% block="受信データ(16進)"
   //% weight=30
   export function irDatagram(): string {
     basic.pause(0); // Yield to support background processing when called in tight loops
@@ -352,7 +353,7 @@ namespace makerbit {
    */
   //% subcategory="IR Receiver"
   //% blockId=makerbit_infrared_was_any_ir_datagram_received
-  //% block="IR data was received"
+  //% block="新しいデータを受信したか"
   //% weight=80
   export function wasIrDataReceived(): boolean {
     basic.pause(0); // Yield to support background processing when called in tight loops
@@ -374,7 +375,7 @@ namespace makerbit {
   //% button.fieldEditor="gridpicker"
   //% button.fieldOptions.columns=3
   //% button.fieldOptions.tooltips="false"
-  //% block="IR button code %button"
+  //% block="ボタン %button"
   //% weight=60
   export function irButtonCode(button: IrButton): number {
     basic.pause(0); // Yield to support background processing when called in tight loops
