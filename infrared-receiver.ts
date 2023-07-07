@@ -2,7 +2,7 @@
 // (receiver module+remote controller)
 
 const enum IrButton {
-  //% block="いずれか"
+  //% block="any"
   Any = -1,
   //% block="▲"
   Up = 0x62,
@@ -47,7 +47,7 @@ const enum IrButton {
 }
 
 const enum IrButtonAction {
-  //% block="オサレ"
+  //% block="pressed"
   Pressed = 0,
   //% block="released"
   Released = 1,
@@ -234,36 +234,12 @@ namespace makerbit {
    */
   //% subcategory="IR Receiver"
   //% blockId="makerbit_infrared_connect_receiver"
-  //% block="%pin and decode %protocol"
+  //% block="こねくと IR receiver at pin %pin and decode %protocol"
   //% pin.fieldEditor="gridpicker"
   //% pin.fieldOptions.columns=4
   //% pin.fieldOptions.tooltips="false"
   //% weight=90
   export function connectIrReceiver(
-    pin: DigitalPin,
-    protocol: IrProtocol
-  ): void {
-    initIrState();
-
-    if (irState.protocol) {
-      return;
-    }
-
-    irState.protocol = protocol;
-
-    enableIrMarkSpaceDetection(pin);
-
-    background.schedule(notifyIrEvents, background.Thread.Priority, background.Mode.Repeat, REPEAT_TIMEOUT_MS);
-  }
-  
-  //% subcategory="IR Receiver"
-  //% blockId="makerbit_infrared_connect_receiver"
-  //% block="%pin and %protocol"
-  //% pin.fieldEditor="gridpicker"
-  //% pin.fieldOptions.columns=4
-  //% pin.fieldOptions.tooltips="false"
-  //% weight=90
-  export function connectIrReceiver222(
     pin: DigitalPin,
     protocol: IrProtocol
   ): void {
