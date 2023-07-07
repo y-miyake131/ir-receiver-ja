@@ -336,7 +336,6 @@ namespace makerbit {
    */
   //% subcategory="IR Receiver"
   //% blockId=makerbit_infrared_ir_datagram
-  //% block="IR datagram"
   //% weight=30
   export function irDatagram(): string {
     basic.pause(0); // Yield to support background processing when called in tight loops
