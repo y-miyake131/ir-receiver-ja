@@ -1,0 +1,19 @@
+{
+    "name": "ir-receiver-ja",
+    "version": "1.0",
+    "description": "MakeCode extension for Keyestudio Infrared Wireless Module Kit",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*",
+        "background": "github:1010Technologies/pxt-makerbit-background#v1.0.1"
+    },
+    "files": [
+        "README.md",
+        "infrared-receiver.ts",
+        "_locales/ja/MakerBit-IR-Receiver-strings.json"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true
+}
