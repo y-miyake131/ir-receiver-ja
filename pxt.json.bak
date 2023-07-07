@@ -8,7 +8,6 @@
         "background": "github:1010Technologies/pxt-makerbit-background#v1.0.1"
     },
     "files": [
-        "README.md",
         "infrared-receiver.ts",
         "_locales/ja/MakerBit-IR-Receiver-strings.json"
     ],
