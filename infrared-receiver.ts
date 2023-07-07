@@ -234,14 +234,14 @@ namespace makerbit {
    */
   //% subcategory="IR Receiver"
   //% blockId="makerbit_infrared_connect_receiver"
-  //% block="赤外線センサーを %protocol 通信プロトコルでピン %pin につなげる"
+  //% block="赤外線センサーを 通信プロトコル %protocol でピン %pin につなげる"
   //% pin.fieldEditor="gridpicker"
   //% pin.fieldOptions.columns=4
   //% pin.fieldOptions.tooltips="false"
   //% weight=90
   export function connectIrReceiver(
-    pin: DigitalPin,
-    protocol: IrProtocol
+    protocol: IrProtocol,
+    pin: DigitalPin
   ): void {
     initIrState();
 
